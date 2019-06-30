@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConexionService } from 'src/app/services/conexion.service';
+
 
 @Component({
   selector: 'app-lista',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
+item:any = {
+  name:''
+} 
+
+  constructor(private servicio : ConexionService) { }
 
   ngOnInit() {
+  }
+
+  agregar(){
+    this.servicio.addItem(this.item);
+    this.item.name = '';
   }
 
 }
