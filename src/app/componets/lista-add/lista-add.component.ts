@@ -20,4 +20,8 @@ export class ListaAddComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  eliminar(item){
+      this.conexion.eliminarItem(item);
+  }
 }
